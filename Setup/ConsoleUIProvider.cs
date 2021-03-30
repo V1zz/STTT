@@ -8,37 +8,40 @@
     {
         public void Show(int[] array)
         {
-            Console.WriteLine("=============================");
-            // Console.Write();
+            Console.WriteLine("===========================================================================");
             for (var i = 0; i < array.Length; i++)
             {
-                Console.Write($"{array[i]} - ");
-                if (((i + 1) % 5) == 0 && i != 0)
+                Console.Write($"{array[i]}");
+                if (((i + 1) % 10) == 0)
                 {
-                    Console.WriteLine("\n");
+                    Console.WriteLine();
+                    continue;
                 }
+                Console.Write("\t");
             }
-            Console.WriteLine("===========================");
+            Console.WriteLine("===========================================================================");
         }
 
         public void Start()
         {
             bool flag;
-            var core = new CoreHelper();
+            CoreHelper core;
 
             
             do
             {
+                core = new CoreHelper();
+
                 flag = true;
                 Console.WriteLine("> init*");
                 Show(core.ModelArr);
-                Show(core.ModelInstance);
+                Show(core.ModelArr1);
                 Console.WriteLine("> run b-sorting");
                 core.BubbleSortMethod();
-                Console.WriteLine("-----------------------------:");
+                Console.WriteLine(":-------------------------------------------------------------------------:");
                 Console.WriteLine("> result:");
                 Show(core.ModelArr);
-                Show(core.ModelInstance);
+                Show(core.ModelArr1);
                 Console.WriteLine(".........esc to esc..........");
 
                 var key = Console.ReadKey(true);

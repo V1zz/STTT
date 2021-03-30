@@ -18,7 +18,7 @@
 
                 for (int i = 0; i < array.Length - 1; i++)
                 {
-                    if (i > i + 1) 
+                    if (array[i] > array[i + 1]) 
                     {
                         flag = true;
                         Shake(array, i, i + 1);
